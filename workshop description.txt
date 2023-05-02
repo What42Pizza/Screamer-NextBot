@@ -1,0 +1,63 @@
+Based on Danyadd's NextBot mod, but with major overhauls that significantly improve the ai. If it still isn't hard enough, try two!
+Link to the original mod: https://steamcommunity.com/sharedfiles/filedetails/?id=2829215554
+
+Notes:
+  - This mod is designed to work these mods:
+    - Better Run (https://steamcommunity.com/sharedfiles/filedetails/?id=2881047428)
+    - Dynamic Debris Removal (https://steamcommunity.com/sharedfiles/filedetails/?id=2677340659)
+    - (if using debug mode) Better Console Clearer (https://steamcommunity.com/sharedfiles/filedetails/?id=2881046775)
+  - You can place mutliple nextbots by holding shift (or just by spawning it again)
+  - Vehicles kinda make this boring (which I'll try to work on)
+
+
+
+The code for this is split into 2 main files: nextbot.lua and entityAI.lua. EntityAI.lua holds the pathfinding and movement code, while nextbot.lua spawns the nextbot, handles options, and performs mod-specific abilities (such as jumping, exploding, and killing the player). If you want to make your own nextbot with special abilities, you should be able to do everything you want by only editing nextbot.lua.
+
+
+
+Option descriptions:
+
+Speed:
+  Changes the overall speed of the nextbot
+Max path compute time:
+  The maximum amount of time a path can be computing before it is forcefully aborted
+Play sounds:
+  Whether the chase and kill sounds are played
+Can jump
+  Whether the nextbot can jump
+  Jump height is based on player height, so don't think tall buildings can save you
+Can push objects
+  Whether the nextbot can fling objects it touches
+Can explode:
+  Whether the nextbot can destroy the world (other than throwing damage)
+Can explode vehicles:
+  Whether the nextbot can destroy the vehicle you're in and eject you from it.
+Disable on kill:
+  Whether the nextbot should disable itself when it kills you
+  If set to false, the nextbot will teleport to 50 meters above you
+Reset bad positions:
+  Whether the nextbot should reset its position or disable itself on bad positions
+  Bad positions include:
+  500 meters below the player
+  1000 meters above the player
+  Nan positions
+Simplified collision logic:
+  Whether to use simplified collision logic
+  If disabled, the bot cannot move along walls, as if the wall has infinite friction
+Debug mode:
+  Whether to show the nextbot's position, path, and thoughts
+
+
+
+Recent Changelog:
+
+v1.4.5 (03/21/23):
+Probably fixed bug where settings were reset on quickload
+
+v1.4.4 (11/05/22):
+Fixed option 'reset bad positions' being inverted (plus other position reset bugs)
+Improved 'can explode vehicles' option (now only explodes a vehicle if a player is in it)
+
+v1.4.3 (11/04/22):
+Added option 'can explode vehicles' (on by default)
+Improved / fixed unstucking

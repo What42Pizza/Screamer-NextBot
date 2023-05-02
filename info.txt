@@ -1,0 +1,12 @@
+name = Screamer NextBot (a1.0.0)
+author = What42
+description = [noupload]Based on my own nextbot AI, which is based on Danyadd's NextBot mod. NextBot option explanations are on the steam page of Better NextBot.
+tags = Global, Spawn, Gameplay
+
+# If description contains [noupload] the description on Steam workshop will not be overwritten.
+# Available tags (comma-separated):
+# Map      - A custom map with no particular gameplay
+# Gameplay - Mod has a mission, objective or other gameplay
+# Asset    - A collection of assets for others to use
+# Vehicle  - Mod contains drivable, custom vehicles
+# Tool     - Mod adds a custom weapon or other tool
